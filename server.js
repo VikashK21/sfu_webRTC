@@ -214,7 +214,6 @@ connections.on("connection", async (socket) => {
         callback({
           params: {
             id: transport.id,
-            iceParameters: transport.iceParameters,
             iceCandidates: transport.iceCandidates,
             dtlsParameters: transport.dtlsParameters,
           },

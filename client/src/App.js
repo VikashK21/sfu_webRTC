@@ -4,6 +4,8 @@ import mediasoupClient, { Device } from "mediasoup-client";
 import Videos from "./Components/Videos";
 
 const url = "http://127.0.0.1:8088/mediasoup";
+const roomName = window.location.pathname;
+
 // Hermieoni
 
 function App() {
@@ -100,7 +102,6 @@ function App() {
 
   const joinRoom = () => {
     console.log("the join room step 2.");
-    const roomName = window.location.pathname;
     socket.current.emit("joinRoom", { roomName }, (data) => {
       console.log(
         `Router RTP Capabilities... ${data.rtpCapabilities}`,
